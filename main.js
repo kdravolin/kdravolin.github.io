@@ -37,7 +37,12 @@ function getKmDate(km, startDate) {
 function printTable(startDate) {
     println("");
     for (var i = 1; i <= 42; i++) {
-        println(i + " км\t" + formatDate(getKmDate(i, startDate)));
+        var date = getKmDate(i, startDate);
+        var currentDate = new Date();
+
+        if (date.getTime() >= currentDate.getTime()) {
+            println(i + " км\t" + formatDate(date));
+        }
     }
 }
 
@@ -52,35 +57,3 @@ function onClick() {
 
     document.getElementById("content").innerHTML = text;
 }
-
-// var splitTime = document.getElementById("settime").value.split(":");
-// var startDate = new Date();
-// startDate.setHours(Number(splitTime[0]));
-// startDate.setMinutes(Number(splitTime[1]));
-// startDate.setSeconds(Number(splitTime[2]));
-// alert(startDate);
-
-// var startTimeToday = milliseconds(Number(splitTime[0]), Number(splitTime[1]), Number(splitTime[2]));
-
-
-// var schedule = {
-//     milliseconds(0, 6, 22): 1,
-//     milliseconds(0, 31, 50): 5,
-//     milliseconds(1, 3, 40): 10,
-//     milliseconds(1, 35, 30): 15,
-//     milliseconds(2, 14, 19): 21.0975,
-//     milliseconds(2, 39, 10): 25,
-//     milliseconds(3, 11, 0): 30,
-//     milliseconds(3, 42, 50): 35,
-//     milliseconds(4, 14, 40): 40,
-//     milliseconds(4, 29, 0): 42.195
-// };
-
-// var startTime = 
-
-// var oneKmTime = milliseconds(0, 6, 22);
-// var dateDiff = milliseconds(0, 6, 22);
-// var currentDate = new Date();
-// var date = new Date(currentDate.getTime() + dateDiff);
-// var date = currentDate;
-// document.getElementById("content").innerHTML = formatDate(date);
