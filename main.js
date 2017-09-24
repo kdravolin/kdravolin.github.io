@@ -40,9 +40,9 @@ function printTable(startDate) {
         var date = getKmDate(i, startDate);
         var currentDate = new Date();
 
-        if (date.getTime() >= currentDate.getTime()) {
+       // if (date.getTime() >= currentDate.getTime()) {
             println(i + " км\t" + formatDate(date));
-        }
+        //}
     }
 }
 
